@@ -1,11 +1,22 @@
-const defaultTheme = require('tailwindcss/defaultTheme');
 
 module.exports = {
     theme: {
         extend: {
             fontFamily: {
-                sans: ['Inter var', ...defaultTheme.fontFamily.sans],
+                rubik: ['Rubik', 'sans-serif']
             },
+            colors: {
+                "darkBlue": "#01438a",
+                "crayola": "#00a5cf",
+                "aquamarine": "#9fffcb",
+                "persianGreen": "#25a18e",
+                "lightGreen": "#7ae582"
+            },
+            backgroundImage: {
+                'shopBanner': "url('/img/banner/shop-banner.jpg')",
+                'secureBanner': "url('/img/banner/secure-banner.jpg')",
+                'saleBanner': "url('/img/banner/sale-banner.jpg')"
+            }
         },
     },
     variants: {
