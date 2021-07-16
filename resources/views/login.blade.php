@@ -19,7 +19,8 @@
       </div>
     </section>
     <section class="flex items-center w-full px-5 bg-white md:px-24 lg:w-3/5">
-      <form action="#" class="w-full">
+      <form action="{{ route('login.proses') }}" method="POST" class="w-full">
+        @csrf
         <h2 class="mb-10 text-3xl text-center">Sign in to Storev</h2>
         <div class="relative mb-5 float-input">
           <input 
@@ -27,18 +28,20 @@
             id="username" 
             class="w-full p-3 text-gray-600 bg-gray-100 border-none rounded-md h-14 focus:outline-none" 
             placeholder="Username" 
+            name="duUsername"
           />
           <label for="username" class="absolute top-0 left-0 h-full px-3 py-4 text-gray-400 transition-all duration-100 ease-in-out origin-left transform pointer-events-none ">Username</label>
         </div>
         
         <div class="relative mb-1 float-input">
           <input 
-            type="email" 
-            id="email" 
+            type="password" 
+            id="password" 
             class="w-full p-3 text-gray-600 bg-gray-100 border-none rounded-md h-14 focus:outline-none" 
-            placeholder="name@example.com" 
+            placeholder="Password" 
+            name="duPassword"
           />
-          <label for="email" class="absolute top-0 left-0 h-full px-3 py-4 text-gray-400 transition-all duration-100 ease-in-out origin-left transform pointer-events-none ">Email address</label>
+          <label for="password" class="absolute top-0 left-0 h-full px-3 py-4 text-gray-400 transition-all duration-100 ease-in-out origin-left transform pointer-events-none ">Password</label>
         </div>
 
         <a href="{{ route('reset') }}" class="block text-sm text-right text-gray-600 mb-7">Forgot password?</a>
@@ -53,7 +56,7 @@
           <span class="px-3 bg-white">OR</span>
         </p>
 
-        <a href="{{ route('register') }}" class="block text-lg text-center text-darkBlue">Create account</a>
+        <a href="{{ route('register.index') }}" class="block text-lg text-center text-darkBlue">Create account</a>
       </form>
     </section>
   </main>

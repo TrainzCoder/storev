@@ -41,7 +41,7 @@
           </button>
         </a>
 
-        <a href="{{ route('login') }}" class="block text-lg text-center mt-7 text-darkBlue">Cancel</a>
+        <a href="{{ route('login.index') }}" class="block text-lg text-center mt-7 text-darkBlue">Cancel</a>
       </form>
     </section>
   </main>

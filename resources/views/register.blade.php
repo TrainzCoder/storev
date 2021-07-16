@@ -11,7 +11,7 @@
   <script src="{{ url(mix('js/app.js')) }}" defer></script>
 </head>
 <body>
-  <main class="flex w-full min-h-screen">
+  <main class="flex w-full min-h-screen font-sans">
     <section class="hidden w-2/5 px-20 pt-48 text-white lg:block bg-gradient-to-br from-crayola to-darkBlue">
       <div>
         <h1 class="text-4xl mb-7">Welcome to Storev</h1>
@@ -19,7 +19,8 @@
       </div>
     </section>
     <section class="flex items-center w-full px-5 bg-white md:px-24 lg:w-3/5">
-      <form action="#" class="w-full">
+      <form action="{{ route('register.proses') }}" method="POST" class="w-full">
+        @csrf
         <h2 class="mb-10 text-3xl text-center font-rubik">Register to Storev</h2>
 
         <div class="relative mb-5 float-input">
@@ -27,9 +28,10 @@
             type="text" 
             id="fullname" 
             class="w-full p-3 text-gray-600 bg-gray-100 border-none rounded-md h-14 focus:outline-none" 
-            placeholder="fullname" 
+            placeholder="fullname"
+            name="duNama" 
           />
-          <label for="username" class="absolute top-0 left-0 h-full px-3 py-4 text-gray-400 transition-all duration-100 ease-in-out origin-left transform pointer-events-none ">Your fullname</label>
+          <label for="fullname" class="absolute top-0 left-0 h-full px-3 py-4 text-gray-400 transition-all duration-100 ease-in-out origin-left transform pointer-events-none ">Your fullname</label>
         </div>
 
         <div class="relative mb-5 float-input">
@@ -37,7 +39,8 @@
             type="text" 
             id="username" 
             class="w-full p-3 text-gray-600 bg-gray-100 border-none rounded-md h-14 focus:outline-none" 
-            placeholder="Username" 
+            placeholder="Username"
+            name="duUsername" 
           />
           <label for="username" class="absolute top-0 left-0 h-full px-3 py-4 text-gray-400 transition-all duration-100 ease-in-out origin-left transform pointer-events-none ">Username</label>
         </div>
@@ -48,6 +51,7 @@
             id="email" 
             class="w-full p-3 text-gray-600 bg-gray-100 border-none rounded-md h-14 focus:outline-none" 
             placeholder="name@example.com" 
+            name="duEmail"
           />
           <label for="email" class="absolute top-0 left-0 h-full px-3 py-4 text-gray-400 transition-all duration-100 ease-in-out origin-left transform pointer-events-none ">Email address</label>
         </div>
@@ -58,6 +62,7 @@
             id="password" 
             class="w-full p-3 text-gray-600 bg-gray-100 border-none rounded-md h-14 focus:outline-none" 
             placeholder="Password" 
+            name="duPassword"
           />
           <label for="password" class="absolute top-0 left-0 h-full px-3 py-4 text-gray-400 transition-all duration-100 ease-in-out origin-left transform pointer-events-none ">Password</label>
         </div>
@@ -72,9 +77,12 @@
           <span class="px-3 bg-white">OR</span>
         </p>
 
-        <a href="{{ route('login') }}" class="block text-lg text-center text-darkBlue">Login into your account</a>
+        <a href="{{ route('login.index') }}" class="block text-lg text-center text-darkBlue">Login into your account</a>
       </form>
     </section>
   </main>
+  @if ($errors->any())
+      <script>alert('ada error tolol')</script>
+  @endif
 </body>
 </html>
