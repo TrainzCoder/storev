@@ -17,7 +17,7 @@
     <nav class="flex items-center justify-between px-4 py-3 bg-white lg:py-4 lg:px-16">
       <a href="{{ route('home') }}">Back to home</a>
 
-      <a href="#">
+      <a href="{{ route('logout') }}">
         <button 
           class="px-4 py-1 text-sm border-2 rounded-md shadow-md hover:bg-darkBlue hover:text-white lg:px-6 lg:py-2 text-darkBlue border-darkBlue">
           Log Out

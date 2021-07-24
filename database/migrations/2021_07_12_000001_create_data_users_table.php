@@ -19,7 +19,6 @@ class CreateDataUsersTable extends Migration
             $table->text('duFotoProfil')->nullable();
             $table->text('duAlamat')->nullable();
             $table->string('duKontak', 12)->nullable();
-            $table->text('duDeskripsi')->nullable();
             $table->foreignId('duIdLapak')->nullable()->constrained('data_lapaks')->onUpdate('cascade')->onDelete('cascade');
             $table->string('duUsername', 50);
             $table->string('duPassword');

@@ -73,7 +73,10 @@
               -
             </button>
             <p x-text="count" class="px-4"></p>
-            <button @click="count++" class="px-2 text-gray-600 border-l border-gray-400 ">
+            <button class="px-2 text-gray-600 border-l border-gray-400 disabled:opacity-30" @click="count--" x-show="count == 10" disabled x-cloak>
+              +
+            </button>
+            <button @click="count++" x-show="count < 10" class="px-2 text-gray-600 border-l border-gray-400 ">
               +
             </button>
           </div>
@@ -116,7 +119,7 @@
             <form class="w-full">
               <div class="flex flex-col">
                 <div class="w-full mb-2">
-                  <textarea class="w-full h-20 px-3 py-2 leading-normal placeholder-gray-400 bg-gray-100 border border-gray-300 rounded resize-none focus:outline-none focus:bg-gray-50" name="body" placeholder='Type Your Comment' required></textarea>
+                  <textarea class="w-full h-20 px-3 py-2 leading-normal placeholder-gray-400 bg-gray-100 border border-gray-300 rounded resize-none focus:outline-none focus:bg-gray-50" name="body" placeholder='Type Your Comment'></textarea>
                 </div>
                 <div class="flex flex-row items-center w-full">
                   <div x-data="

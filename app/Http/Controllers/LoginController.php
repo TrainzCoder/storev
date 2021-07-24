@@ -21,7 +21,7 @@ class LoginController extends Controller
             'duUsername' => $request->duUsername,
             'password' => $request->duPassword
         ];
-        if(Auth::attempt($aturan)) {
+        if(Auth::attempt($aturan, $request->remember)) {
             $request->session()->regenerate();
             return redirect(route('home'));
         } else {
