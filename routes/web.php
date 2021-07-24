@@ -26,3 +26,9 @@ Route::prefix('/register')->name('register.')->group(function () {
   Route::post('/proses', [RegisterController::class, 'proses'])->name('proses');
 });
 Route::view('/reset', 'reset')->name('reset');
+Route::view('/user', 'user')->name('user');
+Route::view('/product', 'product')->name('product');
+Route::view('/detail', 'detail')->name('detail');
+Route::view('/create-store', 'create-store')->name('create-store');
+Route::view('/add-product', 'add-product')->name('add-product');
+Route::view('/edit-product', 'edit-product')->name('edit-product');

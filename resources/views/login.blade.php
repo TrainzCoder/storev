@@ -44,7 +44,14 @@
           <label for="password" class="absolute top-0 left-0 h-full px-3 py-4 text-gray-400 transition-all duration-100 ease-in-out origin-left transform pointer-events-none ">Password</label>
         </div>
 
-        <a href="{{ route('reset') }}" class="block text-sm text-right text-gray-600 mb-7">Forgot password?</a>
+        <a href="{{ route('reset') }}" class="block text-sm text-right text-gray-600 ">Forgot password?</a>
+        
+        <div class="mt-5 mb-7">
+          <label class="block text-gray-700" for="remember">
+            <input class="leading-tight" type="checkbox" id="remember" name="remember">
+            <span class="text-base">Remember me</span>
+          </label>
+        </div>
 
         <a href="{{ route('home') }}">
           <button type="submit" class="w-full py-3 tracking-wider text-white transition-all rounded-md shadow-lg hover:shadow-none bg-darkBlue hover:bg-crayola">
