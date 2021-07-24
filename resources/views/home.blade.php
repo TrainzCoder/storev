@@ -9,10 +9,13 @@
 
     <link rel="stylesheet" href="{{ url(mix('css/app.css')) }}">
 
+    <script src="{{ url(mix('js/app.js')) }}" defer></script>
+
+
 </head>
 
-<body class="overflow-x-hidden max-w-screen">
-    <header class="fixed top-0 z-40 w-screen shadow-lg">
+<body class="overflow-x-hidden font-sans max-w-screen">
+    <header class="fixed top-0 z-40 w-full shadow-lg">
         <nav class="flex items-center justify-between px-4 py-3 bg-white lg:py-4 lg:px-16">
             <div>
                 <h3 class="text-2xl font-semibold">Storev</h3>
@@ -29,7 +32,7 @@
 
             <div>
                 @if (Auth::check())
-                <a href="#">
+                <a href="{{ route('user') }}">
                   <img src="{{ url('/img/icon/user.svg') }}" class="w-8 h-8 lg:w-9 lg:h-9" alt="">
                 </a>
                 @else
@@ -57,7 +60,7 @@
         </section>
 
         <section class="px-4 mt-10 lg:px-16">
-            <div class="overflow-x-scroll lg:overflow-x-hidden">
+            <div class="overflow-x-scroll lg:overflow-x-hidden" id="swipe">
                 <div class="grid grid-cols-3 gap-4 lg:grid-cols-2 w-max lg:w-full h-80">
                     <div class="relative bg-center bg-no-repeat bg-cover w-72 bg-shopBanner lg:w-auto lg:row-span-2">
                         <div class="absolute z-10 ml-5 transform -translate-y-1/2 top-1/2">
@@ -82,7 +85,7 @@
         </section>
 
         <section class="px-3 mt-20 lg:px-16">
-            <div class="overflow-x-scroll lg:overflow-x-auto">
+            <div class="overflow-x-scroll lg:overflow-x-auto" id="swipe">
                 <div class="flex gap-4 lg:gap-9" x-data="{ status: 'all' }">
                     <button class="px-3 py-1 text-xs shadow-sm lg:text-sm" @click="status = 'all'"
                         :class="status === 'all' ? 'text-white bg-crayola' : 'text-crayola border border-crayola'">
@@ -118,36 +121,38 @@
             <h2 class="text-3xl lg:text-4xl mt-14 mb-9">Weekly Best Deals</h2>
 
             <div class="grid grid-cols-2 gap-1 lg:grid-cols-6 lg:gap-4">
-                <a href="#">
-                    <div class="w-full border border-gray-300">
-                        <div class="w-full h-32 bg-gray-500">
-                            <img src="{{ url('/img/banner/shop-banner.jpg') }}" class="object-cover w-full h-full"
-                                alt="product-1">
-                        </div>
-                        <div class="px-2 py-3">
-                            <h3 class="mb-2 text-base lg:text-lg overflow-ellipsis">Product-1</h3>
-
-                            <h3 class="mb-3 text-xl lg:mb-4 text-darkBlue"><span class="text-sm">Rp </span>10.000</h3>
-
-                            <div class="flex items-center justify-between">
-                                <span class="flex items-center gap-1 text-xs lg:text-sm">
-                                    <img src="{{ url('/img/icon/star-filled.svg') }}" class="w-3 h-3 lg:w-4 lg:h-4"
-                                        alt="">
-                                    <p>4</p>
-                                </span>
-
-                                <p class="px-3 text-xs text-green-600 border border-green-600 lg:text-sm rounded-3xl">
-                                    In-stock
-                                </p>
-                                <!-- <p class="px-3 text-xs text-red-600 border border-red-600 lg:text-sm rounded-3xl">
-                  Out-stock
-                </p> -->
-                            </div>
-
-                            <p class="mt-2 text-sm text-right text-gray-700 lg:text-base">Jakarta,Indonesia</p>
-                        </div>
+                <div class="relative w-full border border-gray-300">
+                    <!-- ini buat link ke detailnya -->
+                    <a href="#" class="absolute top-0 bottom-0 left-0 right-0 z-10">
+                    </a>
+                    
+                    <div class="w-full h-32 bg-gray-500">
+                        <img src="{{ url('/img/banner/shop-banner.jpg') }}" class="object-cover w-full h-full"
+                            alt="product-1">
                     </div>
-                </a>
+                    <div class="px-2 py-3">
+                        <h3 class="mb-2 text-base lg:text-lg overflow-ellipsis">Product-1</h3>
+
+                        <h3 class="mb-3 text-xl lg:mb-4 text-darkBlue"><span class="text-sm">Rp. </span>10.000</h3>
+
+                        <div class="flex items-center justify-between">
+                            <span class="flex items-center gap-1 text-xs lg:text-sm">
+                                <img src="{{ url('/img/icon/star-filled.svg') }}" class="w-3 h-3 lg:w-4 lg:h-4"
+                                    alt="">
+                                <p>4.0</p>
+                            </span>
+
+                            <p class="px-3 text-xs text-green-600 border border-green-600 lg:text-sm rounded-3xl">
+                                In-stock
+                            </p>
+                            <!-- <p class="px-3 text-xs text-red-600 border border-red-600 lg:text-sm rounded-3xl">
+                Out-stock
+            </p> -->
+                        </div>
+
+                        <p class="mt-2 text-sm text-right text-gray-700 lg:text-base">Jakarta,Indonesia</p>
+                    </div>
+                </div>
 
             </div>
         </section>

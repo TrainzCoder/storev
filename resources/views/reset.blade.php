@@ -11,7 +11,7 @@
   <script src="{{ url(mix('js/app.js')) }}" defer></script>
 </head>
 <body>
-  <main class="flex w-full min-h-screen font-sans">
+  <main class="flex w-full min-h-screen font-sans bg-gray-50">
     <section class="flex items-center w-full px-5 bg-white lg:mx-auto lg:w-3/5">
       <form action="#" class="w-full">
         <h2 class="mb-10 text-3xl text-center">Reset Password</h2>

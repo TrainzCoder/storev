@@ -55,6 +55,11 @@ div[class*="Banner"]::after {
         rgba(0, 0, 0, 0.2)
     );
 }
+
+#swipe::-webkit-scrollbar {
+    display: none;
+}
+
 @tailwind components;
 
 @tailwind utilities;
