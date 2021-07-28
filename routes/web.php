@@ -31,9 +31,9 @@ Route::get('/logout',function () {
   Auth::logout();
   return redirect(route('home'));
 })->name('logout');
-Route::view('/user', 'user')->name('user');
-Route::view('/product', 'product')->name('product');
-Route::view('/detail', 'detail')->name('detail');
-Route::view('/create-store', 'create-store')->name('create-store');
-Route::view('/add-product', 'add-product')->name('add-product');
-Route::view('/edit-product', 'edit-product')->name('edit-product');
+Route::view('/user', 'user/user')->name('user');
+Route::view('/product', 'product/product')->name('product');
+Route::view('/detail', 'product/detail')->name('detail');
+Route::view('/create-store', 'user/create-store')->name('create-store');
+Route::view('/add-product', 'product/add-product')->name('add-product');
+Route::view('/edit-product', 'product/edit-product')->name('edit-product');
